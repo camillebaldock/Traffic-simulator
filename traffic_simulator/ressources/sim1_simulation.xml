@@ -1,0 +1,137 @@
+<Simulation>
+  <Vehicule type="Twingo">
+    <Emplacement>0 0</Emplacement>
+    <Direction>45</Direction>
+    <Conducteur type="Normal">
+      <Voie>
+        <Intersections>D1 A F G L M R Q P U V W X S R M R Q P U V W X S R M R Q P U V W X S R M R Q P U V W X S R M R Q P U V W X S R N I D E D3</Intersections>
+      </Voie>
+    </Conducteur>
+  </Vehicule>
+  <Vehicule type="Berline">
+    <Emplacement>20 20</Emplacement>
+    <Direction>45</Direction>
+    <Conducteur type="Normal">
+      <Voie>
+        <Intersections>D1 A F K P U V Q L G B C H I D C H M R W X S N I D C H M R W X S N I D C H M R W X S N I D C H M R W X S N I D E J I D E D3</Intersections>
+      </Voie>
+    </Conducteur>
+  </Vehicule>
+  <Vehicule type="Twingo">
+    <Emplacement>990 990</Emplacement>
+    <Direction>225</Direction>
+    <Conducteur type="Normal">
+      <Voie>
+        <Intersections>D4 Y X S N M R Q L M R Q L M R W V U P K L M R Q L M R Q L M R W V U P K L M R Q L M R Q L M R W V U P K L M H C D E D3</Intersections>
+      </Voie>
+    </Conducteur>
+  </Vehicule>
+  <Vehicule type="Twingo">
+    <Emplacement>980 980</Emplacement>
+    <Direction>225</Direction>
+    <Conducteur type="Normal">
+      <Voie>
+        <Intersections>D4 Y T O N M H I D C H G B A F K L M H I D C H G B A F K L M H I D C H G B A F K L M H I D C H G B A F K L M H G L Q V U D2</Intersections>
+      </Voie>
+    </Conducteur>
+  </Vehicule>
+  <Vehicule type="Ferrari">
+    <Emplacement>970 970</Emplacement>
+    <Direction>225</Direction>
+    <Conducteur type="Normal">
+      <Voie>
+        <Intersections>D4 Y T S N I H G F K L Q V W X S N I H G F K L Q V W X S N I H G F K L Q V W X S N I H G F K L Q V W X S N I D C B A D1</Intersections>
+      </Voie>
+    </Conducteur>
+  </Vehicule>
+  <Vehicule type="Twingo">
+    <Emplacement>1000 1000</Emplacement>
+    <Direction>225</Direction>
+    <Conducteur type="Normal">
+      <Voie>
+        <Intersections>D4 Y X W V U P Q R S T O N M L K F G H I J E D C B A F G L Q P K L M H G L M R Q V W X Y T S N M H G F A D1</Intersections>
+      </Voie>
+    </Conducteur>
+  </Vehicule>
+  <Vehicule type="Berline">
+    <Emplacement>1010 1010</Emplacement>
+    <Direction>225</Direction>
+    <Conducteur type="Normal">
+      <Voie>
+        <Intersections>D4 Y X S R W V Q L K P Q R M N I J O T S R W X Y T O J I N S R Q P K F A B G L Q V U D2</Intersections>
+      </Voie>
+    </Conducteur>
+  </Vehicule>
+    <Vehicule type="Twingo">
+    <Emplacement>1020 1020</Emplacement>
+    <Direction>225</Direction>
+    <Conducteur type="Normal">
+      <Voie>
+        <Intersections>D4 Y X S N M R Q L M R Q L M R W V U P K L M R Q L M R Q L M R W V U P K L M R Q L M R Q L M R W V U P K L M H C D E D3</Intersections>
+      </Voie>
+    </Conducteur>
+  </Vehicule>
+  <Vehicule type="Ferrari">
+    <Emplacement>1030 1030</Emplacement>
+    <Direction>225</Direction>
+    <Conducteur type="Normal">
+      <Voie>
+        <Intersections>D4 Y T O N M H I D C H G B A F K L M H I D C H G B A F K L M H I D C H G B A F K L M H I D C H G B A F K L M H G L Q V U D2</Intersections>
+      </Voie>
+    </Conducteur>
+  </Vehicule>
+  <Vehicule type="Berline">
+    <Emplacement>1040 1040</Emplacement>
+    <Direction>225</Direction>
+    <Conducteur type="Normal">
+      <Voie>
+        <Intersections>D4 Y T S N I H G F K L Q V W X S N I H G F K L Q V W X S N I H G F K L Q V W X S N I H G F K L Q V W X S N I D C B A D1</Intersections>
+      </Voie>
+    </Conducteur>
+  </Vehicule>
+  <Vehicule type="Twingo">
+    <Emplacement>1060 1060</Emplacement>
+    <Direction>225</Direction>
+    <Conducteur type="Normal">
+      <Voie>
+        <Intersections>D4 Y X W V U P Q R S T O N M L K F G H I J E D C B A F G L Q P K L M H G L M R Q V W X Y T S N M H G F A D1</Intersections>
+      </Voie>
+    </Conducteur>
+  </Vehicule>
+  <Vehicule type="Berline">
+    <Emplacement>1070 1070</Emplacement>
+    <Direction>225</Direction>
+    <Conducteur type="Normal">
+      <Voie>
+        <Intersections>D4 Y X S R W V Q L K P Q R M N I J O T S R W X Y T O J I N S R Q P K F A B G L Q V U D2</Intersections>
+      </Voie>
+    </Conducteur>
+  </Vehicule>
+  <Vehicule type="Ferrari">
+    <Emplacement>50 950</Emplacement>
+    <Direction>312</Direction>
+    <Conducteur type="Normal">
+      <Voie>
+        <Intersections>D3 E J I D C H M R Q L G H C B A F K P U V W X S R M H C D I N M L K F G H M R Q V W X S N O T Y D4</Intersections>
+      </Voie>
+    </Conducteur>
+  </Vehicule>
+  <Vehicule type="Ferrari">
+    <Emplacement>40 960</Emplacement>
+    <Direction>312</Direction>
+    <Conducteur type="Normal">
+      <Voie>
+        <Intersections>D3 E D I N S R M H C B G L Q V U P K L M N O J I N S R W X S N I D C H G B A C D I N S R Q P U D2</Intersections>
+      </Voie>
+    </Conducteur>
+  </Vehicule>
+  <Vehicule type="Berline">
+    <Emplacement>30 970</Emplacement>
+    <Direction>312</Direction>
+    <Conducteur type="Normal">
+      <Voie>
+        <Intersections>D3 E J O T S N I H M R Q L M H G L M H G F K L M R Q P K L M N O J I H G F A B C H M R W X S N I D C B A D1</Intersections>
+      </Voie>
+    </Conducteur>
+  </Vehicule>
+</Simulation>

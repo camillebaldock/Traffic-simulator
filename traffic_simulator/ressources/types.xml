@@ -1,0 +1,32 @@
+<Configuration>
+  <TypeVehicule nom="Twingo">
+    <Image>:/voiturebleue.png</Image>
+    <Masse>1800.0</Masse>
+    <Empattement>4</Empattement>
+    <ForceMoteur>5000</ForceMoteur>
+  </TypeVehicule>
+  <TypeVehicule nom="Berline">
+    <Image>:/voitureverte.png</Image>
+    <Masse>1500.0</Masse>
+    <Empattement>5</Empattement>
+    <ForceMoteur>6000</ForceMoteur>
+  </TypeVehicule>
+  <TypeVehicule nom="Ferrari">
+    <Image>:/voituref1.png</Image>
+    <Masse>1200.0</Masse>
+    <Empattement>6</Empattement>
+    <ForceMoteur>8000</ForceMoteur>
+  </TypeVehicule>
+  <TypeConducteur nom="Papi">
+    <VitesseVirage>15</VitesseVirage>
+    <VitesseToutDroit>15</VitesseToutDroit>
+  </TypeConducteur>
+  <TypeConducteur nom="Normal">
+    <VitesseVirage>20</VitesseVirage>
+    <VitesseToutDroit>20</VitesseToutDroit>
+  </TypeConducteur>
+  <TypeConducteur nom="FouFurieux">
+    <VitesseVirage>35</VitesseVirage>
+    <VitesseToutDroit>35</VitesseToutDroit>
+  </TypeConducteur>
+</Configuration>

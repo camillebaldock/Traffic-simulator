@@ -1,0 +1,83 @@
+<Carte>
+<Simulation>sim1_simulation.xml</Simulation>
+<Plan>
+  <Intersections>
+    <Intersection nom="A" x="100" y="100"/>
+    <Intersection nom="B" x="100" y="300"/>
+    <Intersection nom="C" x="100" y="500"/>
+    <Intersection nom="D" x="100" y="700"/>
+    <Intersection nom="E" x="100" y="900"/>
+    <Intersection nom="F" x="300" y="100"/>
+    <Intersection nom="G" x="300" y="300"/>
+    <Intersection nom="H" x="300" y="500"/>
+    <Intersection nom="I" x="300" y="700"/>
+    <Intersection nom="J" x="300" y="900"/>
+    <Intersection nom="K" x="500" y="100"/>
+    <Intersection nom="L" x="500" y="300"/>
+    <Intersection nom="M" x="500" y="500"/>
+    <Intersection nom="N" x="500" y="700"/>
+    <Intersection nom="O" x="500" y="900"/>
+    <Intersection nom="P" x="700" y="100"/>
+    <Intersection nom="Q" x="700" y="300"/>
+    <Intersection nom="R" x="700" y="500"/>
+    <Intersection nom="S" x="700" y="700"/>
+    <Intersection nom="T" x="700" y="900"/>
+    <Intersection nom="U" x="900" y="100"/>
+    <Intersection nom="V" x="900" y="300"/>
+    <Intersection nom="W" x="900" y="500"/>
+    <Intersection nom="X" x="900" y="700"/>
+    <Intersection nom="Y" x="900" y="900"/>
+    <Intersection nom="D1" x="50" y="50"/>
+    <Intersection nom="D2" x="950" y="50"/>
+    <Intersection nom="D3" x="50" y="950"/>
+    <Intersection nom="D4" x="950" y="950"/>
+    
+  </Intersections>
+  <Routes>
+    <Route depart="A" fin="B" nom="AB" pvd="2" dvp="2"/>
+    <Route depart="A" fin="F" nom="AF" pvd="2" dvp="2"/>
+    <Route depart="B" fin="C" nom="BC" pvd="2" dvp="2"/>
+    <Route depart="B" fin="G" nom="BG" pvd="2" dvp="2"/>
+    <Route depart="C" fin="D" nom="CD" pvd="2" dvp="2"/>
+    <Route depart="C" fin="H" nom="CH" pvd="2" dvp="2"/>
+    <Route depart="D" fin="I" nom="DI" pvd="2" dvp="2"/>
+    <Route depart="D" fin="E" nom="DE" pvd="2" dvp="2"/>
+    <Route depart="E" fin="J" nom="EJ" pvd="2" dvp="2"/>
+    <Route depart="F" fin="G" nom="FG" pvd="2" dvp="2"/>
+    <Route depart="F" fin="K" nom="FK" pvd="2" dvp="2"/>
+    <Route depart="G" fin="H" nom="GH" pvd="2" dvp="2"/>
+    <Route depart="G" fin="L" nom="GL" pvd="2" dvp="2"/>
+    <Route depart="H" fin="I" nom="HI" pvd="2" dvp="2"/>
+    <Route depart="H" fin="M" nom="HM" pvd="2" dvp="2"/>
+    <Route depart="I" fin="J" nom="IJ" pvd="2" dvp="2"/>
+    <Route depart="I" fin="N" nom="IN" pvd="2" dvp="2"/>
+    <Route depart="J" fin="O" nom="JO" pvd="2" dvp="2"/>
+    <Route depart="K" fin="L" nom="KL" pvd="2" dvp="2"/>
+    <Route depart="K" fin="P" nom="KP" pvd="2" dvp="2"/>
+    <Route depart="L" fin="M" nom="LM" pvd="2" dvp="2"/>
+    <Route depart="L" fin="Q" nom="LQ" pvd="2" dvp="2"/>
+    <Route depart="M" fin="N" nom="MN" pvd="2" dvp="2"/>
+    <Route depart="M" fin="R" nom="MR" pvd="2" dvp="2"/>
+    <Route depart="N" fin="O" nom="NO" pvd="2" dvp="2"/>
+    <Route depart="N" fin="S" nom="NS" pvd="2" dvp="2"/>
+    <Route depart="O" fin="T" nom="OT" pvd="2" dvp="2"/>
+    <Route depart="P" fin="Q" nom="PQ" pvd="2" dvp="2"/>
+    <Route depart="P" fin="U" nom="PU" pvd="2" dvp="2"/>
+    <Route depart="Q" fin="R" nom="QR" pvd="2" dvp="2"/>
+    <Route depart="Q" fin="V" nom="QV" pvd="2" dvp="2"/>
+    <Route depart="R" fin="S" nom="RS" pvd="2" dvp="2"/>
+    <Route depart="R" fin="W" nom="RW" pvd="2" dvp="2"/>
+    <Route depart="S" fin="T" nom="ST" pvd="2" dvp="2"/>
+    <Route depart="S" fin="X" nom="SX" pvd="2" dvp="2"/>
+    <Route depart="T" fin="Y" nom="TY" pvd="2" dvp="2"/>
+    <Route depart="U" fin="V" nom="UV" pvd="2" dvp="2"/>
+    <Route depart="V" fin="W" nom="VW" pvd="2" dvp="2"/>
+    <Route depart="W" fin="X" nom="WX" pvd="2" dvp="2"/>
+    <Route depart="X" fin="Y" nom="XY" pvd="2" dvp="2"/>
+    <Route depart="D1" fin="A" nom="D1A" pvd="2" dvp="2"/>
+    <Route depart="D2" fin="U" nom="D2U" pvd="2" dvp="2"/>
+    <Route depart="D3" fin="E" nom="D3E" pvd="2" dvp="2"/>
+    <Route depart="D4" fin="Y" nom="D4Y" pvd="2" dvp="2"/>
+  </Routes>
+</Plan>
+</Carte>

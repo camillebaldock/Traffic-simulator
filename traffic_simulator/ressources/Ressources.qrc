@@ -1,0 +1,19 @@
+<RCC>
+    <qresource prefix="/">
+        <file>feu_orange.png</file>
+        <file>feu_rouge.png</file>
+        <file>feu_vert.png</file>
+        <file>play.png</file>
+        <file>sim1_plan.xml</file>
+        <file>sim1_simulation.xml</file>
+        <file>sim2_plan.xml</file>
+        <file>sim2_simulation.xml</file>
+        <file>sim3_plan.xml</file>
+        <file>sim3_simulation.xml</file>
+        <file>stop.png</file>
+        <file>types.xml</file>
+        <file>voiturebleue.png</file>
+        <file>voituref1.png</file>
+        <file>voitureverte.png</file>
+    </qresource>
+</RCC>

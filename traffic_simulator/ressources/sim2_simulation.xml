@@ -1,0 +1,20 @@
+<Simulation>
+  <Vehicule type="Ferrari">
+    <Emplacement>0 200</Emplacement>
+    <Direction>0</Direction>
+    <Conducteur type="Normal">
+      <Voie>
+        <Intersections>D A B</Intersections>
+      </Voie>
+    </Conducteur>
+  </Vehicule>
+  <Vehicule type="Ferrari">
+    <Emplacement>30 200</Emplacement>
+    <Direction>0</Direction>
+    <Conducteur type="Normal">
+      <Voie>
+        <Intersections>D E F</Intersections>
+      </Voie>
+    </Conducteur>
+  </Vehicule>
+</Simulation>

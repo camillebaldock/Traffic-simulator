@@ -1,0 +1,63 @@
+<?xml version="1.0" ?>
+<Carte>
+<Plan nom="Plan 1">
+  <Intersections>
+    <Intersection nom="A" x="200" y="200"/>
+    <Intersection nom="B" x="100" y="200"/>
+    <Intersection nom="C" x="300" y="200"/>
+    <Intersection nom="D" x="200" y="100"/>
+    <Intersection nom="E" x="200" y="300"/>
+  </Intersections>
+  <Routes>
+    <Route depart="B"  fin="A" nom="BA">
+      <Voie direction="PVD"/>
+      <Voie direction="DVP"/>
+    </Route>
+    <Route depart="A"  fin="B" nom="AB">
+      <Voie direction="PVD"/>
+      <Voie direction="DVP"/>
+    </Route>
+    <Route depart="A"  fin="C" nom="AC">
+      <Voie direction="PVD"/>
+      <Voie direction="DVP"/>
+    </Route>
+    <Route depart="C"  fin="A" nom="CA">
+      <Voie direction="PVD"/>
+      <Voie direction="DVP"/>
+    </Route>
+    <Route depart="A"  fin="D" nom="AD">
+      <Voie direction="PVD"/>
+      <Voie direction="DVP"/>
+    </Route>
+    <Route depart="D"  fin="A" nom="DA">
+      <Voie direction="PVD"/>
+      <Voie direction="DVP"/>
+    </Route>
+    <Route depart="A"  fin="E" nom="AE">
+      <Voie direction="PVD"/>
+      <Voie direction="DVP"/>
+    </Route>
+    <Route depart="E"  fin="A" nom="EA">
+      <Voie direction="DVP"/>
+      <Voie direction="PVD"/>
+    </Route>
+  </Routes>
+</Plan>
+  <Feu>
+    <Intersection>A</Intersection>
+    <Etat nom="Vertical">
+      <TempsVert>5</TempsVert>
+      <TempsOrange>3</TempsOrange>
+      <TempsRouge>2</TempsRouge>
+      <Connexion>AB,0,BA,0</Connexion>
+      <Connexion>BA,0,AB,0</Connexion>
+    </Etat>
+    <Etat nom="Horizontal">
+      <TempsVert>5</TempsVert>
+      <TempsOrange>3</TempsOrange>
+      <TempsRouge>2</TempsRouge>
+      <Connexion>AD,0,DA,0</Connexion>
+      <Connexion>DA,0,AD,0</Connexion>
+    </Etat>
+  </Feu>
+</Carte>

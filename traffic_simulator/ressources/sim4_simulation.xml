@@ -1,0 +1,29 @@
+<Simulation>
+  <Vehicule type="Berline">
+    <Emplacement>0 100</Emplacement>
+    <Direction>0</Direction>
+    <Conducteur type="Papi">
+      <Voie>
+        <Coordonnees>5000 100</Coordonnees>
+      </Voie>
+    </Conducteur>
+  </Vehicule>
+  <Vehicule type="Berline">
+    <Emplacement>0 200</Emplacement>
+    <Direction>0</Direction>
+    <Conducteur type="Normal">
+      <Voie>
+        <Coordonnees>5000 200</Coordonnees>
+      </Voie>
+    </Conducteur>
+  </Vehicule>
+  <Vehicule type="Berline">
+    <Emplacement>0 300</Emplacement>
+    <Direction>0</Direction>
+    <Conducteur type="FouFurieux">
+      <Voie>
+        <Coordonnees>5000 300</Coordonnees>
+      </Voie>
+    </Conducteur>
+  </Vehicule>
+</Simulation>

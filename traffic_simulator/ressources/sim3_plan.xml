@@ -1,0 +1,92 @@
+<Carte>
+<Simulation>sim3_simulation.xml</Simulation>
+<Plan>
+  <Intersections>
+    <Intersection nom="A" x="100" y="100"/>
+    <Intersection nom="B" x="200" y="100"/>
+    <Intersection nom="C" x="300" y="100"/>
+    <Intersection nom="D" x="100" y="200"/>
+    <Intersection nom="E" x="200" y="200"/>
+    <Intersection nom="F" x="300" y="200"/>
+    <Intersection nom="G" x="100" y="300"/>
+    <Intersection nom="H" x="200" y="300"/>
+    <Intersection nom="I" x="300" y="300"/>
+    <Intersection nom="J" x="0" y="100"/>
+    <Intersection nom="K" x="0" y="200"/>
+    <Intersection nom="L" x="0" y="300"/>
+    <Intersection nom="M" x="400" y="100"/>
+    <Intersection nom="N" x="400" y="200"/>
+    <Intersection nom="O" x="400" y="300"/>
+    <Intersection nom="P" x="100" y="0"/>
+    <Intersection nom="Q" x="200" y="0"/>
+    <Intersection nom="R" x="300" y="0"/>
+    <Intersection nom="S" x="100" y="400"/>
+    <Intersection nom="T" x="200" y="400"/>
+    <Intersection nom="U" x="300" y="400"/>
+  </Intersections>
+  <Routes>
+    <Route depart="A"  fin="B" nom="AB" pvd="1" dvp="1"/>
+    <Route depart="B"  fin="C" nom="BC" pvd="1" dvp="1"/>
+    <Route depart="D"  fin="E" nom="DE" pvd="2" dvp="2"/>
+    <Route depart="E"  fin="F" nom="EF" pvd="2" dvp="2"/>
+    <Route depart="G"  fin="H" nom="GH" pvd="1" dvp="1"/>
+    <Route depart="H"  fin="I" nom="HI" pvd="1" dvp="1"/>
+    <Route depart="A"  fin="D" nom="AD" pvd="1" dvp="1"/>
+    <Route depart="G"  fin="D" nom="GD" pvd="1" dvp="1"/>
+    <Route depart="B"  fin="E" nom="BE" pvd="1" dvp="1"/>
+    <Route depart="E"  fin="H" nom="EH" pvd="1" dvp="1"/>
+    <Route depart="C"  fin="F" nom="CF" pvd="1" dvp="1"/>
+    <Route depart="F"  fin="I" nom="FI" pvd="1" dvp="1"/>
+    <Route depart="J"  fin="A" nom="AJ" pvd="1" dvp="1"/>
+    <Route depart="A"  fin="P" nom="AP" pvd="1" dvp="1"/>
+    <Route depart="B"  fin="Q" nom="BQ" pvd="1" dvp="1"/>
+    <Route depart="C"  fin="R" nom="CR" pvd="1" dvp="1"/>
+    <Route depart="C"  fin="M" nom="CM" pvd="1" dvp="1"/>
+    <Route depart="K"  fin="D" nom="DK" pvd="2" dvp="2"/>
+    <Route depart="F"  fin="N" nom="FN" pvd="2" dvp="2"/>
+    <Route depart="L"  fin="G" nom="GL" pvd="1" dvp="1"/>
+    <Route depart="G"  fin="S" nom="GS" pvd="1" dvp="1"/>
+    <Route depart="H"  fin="T" nom="HT" pvd="1" dvp="1"/>
+    <Route depart="I"  fin="O" nom="IO" pvd="1" dvp="1"/>
+    <Route depart="I"  fin="U" nom="IU" pvd="1" dvp="1"/>
+  </Routes>
+  </Plan>
+  <Feu>
+    <Intersection>D</Intersection>
+    <Etat nom="StraightNS">
+      <TempsVert>5</TempsVert>
+      <TempsOrange>3</TempsOrange>
+      <TempsRouge>2</TempsRouge>
+      <Connexion>AD,0,GD,0</Connexion>
+      <Connexion>GD,0,AD,0</Connexion>
+    </Etat>
+    <Etat nom="StraightEW">
+      <TempsVert>5</TempsVert>
+      <TempsOrange>3</TempsOrange>
+      <TempsRouge>2</TempsRouge>
+      <Connexion>DK,0,AD,0</Connexion>
+      <Connexion>DK,0,DE,0</Connexion>
+      <Connexion>DE,0,DK,0</Connexion>
+      <Connexion>DK,1,DE,1</Connexion>
+      <Connexion>DE,1,DK,1</Connexion>
+    </Etat>
+  </Feu>
+  <Feu>
+    <Intersection>A</Intersection>
+    <Etat nom="StraightEW">
+      <TempsVert>5</TempsVert>
+      <TempsOrange>3</TempsOrange>
+      <TempsRouge>2</TempsRouge>
+      <Connexion>AJ,0,AB,0</Connexion>
+      <Connexion>AB,0,AJ,0</Connexion>
+    </Etat>
+    <Etat nom="StraightNS">
+      <TempsVert>5</TempsVert>
+      <TempsOrange>3</TempsOrange>
+      <TempsRouge>2</TempsRouge>
+      <Connexion>AD,0,AB,0</Connexion>
+      <Connexion>AD,0,AP,0</Connexion>
+      <Connexion>AP,0,AD,0</Connexion>
+    </Etat>
+  </Feu>
+</Carte>
