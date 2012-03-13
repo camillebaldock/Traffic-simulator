@@ -8,8 +8,8 @@
   */
 ImageSignalisation::ImageSignalisation(
     const QString &nom,
-    const Plan::Intersection *intersection,
-    const Signalisation::Etat &etat)
+    const Map::Intersection *intersection,
+    const TrafficLights::State &etat)
   : m_Nom(nom),
   m_Intersection(intersection),
   m_Etat(etat)
@@ -20,12 +20,12 @@ QString ImageSignalisation::nom() const
   return m_Nom;
 }
 
-Signalisation::Etat ImageSignalisation::etat() const
+TrafficLights::State ImageSignalisation::etat() const
 {
   return m_Etat;
 }
 
-const Plan::Intersection* ImageSignalisation::intersection() const
+const Map::Intersection* ImageSignalisation::intersection() const
 {
   return m_Intersection;
 }

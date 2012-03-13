@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configurationDescriptor version="80">
+  <logicalFolder name="root" displayName="root" projectFiles="true" kind="ROOT">
+    <df name="traffic_simulator" root=".">
+      <df name="ihm">
+        <df name="images">
+          <in>gestionnaireimages.cpp</in>
+          <in>gestionnaireimages.h</in>
+          <in>image.cpp</in>
+          <in>image.h</in>
+          <in>imagesignalisation.cpp</in>
+          <in>imagesignalisation.h</in>
+          <in>imagevehicule.cpp</in>
+          <in>imagevehicule.h</in>
+        </df>
+        <in>car_ui.cpp</in>
+        <in>car_ui.h</in>
+        <in>infovehiculeihm.cpp</in>
+        <in>infovehiculeihm.h</in>
+        <in>intersection_ui.cpp</in>
+        <in>intersection_ui.h</in>
+        <in>road_ui.cpp</in>
+        <in>road_ui.h</in>
+        <in>simulation_ui.cpp</in>
+        <in>simulation_ui.h</in>
+        <in>trafficlights_ui.cpp</in>
+        <in>trafficlights_ui.h</in>
+      </df>
+      <df name="main">
+        <in>car.cpp</in>
+        <in>car.h</in>
+        <in>driver.cpp</in>
+        <in>driver.h</in>
+        <in>main.cpp</in>
+        <in>map.cpp</in>
+        <in>map.h</in>
+        <in>simulation.cpp</in>
+        <in>simulation.h</in>
+        <in>trafficlights.cpp</in>
+        <in>trafficlights.h</in>
+        <in>trafficsimulator.cpp</in>
+        <in>trafficsimulator.h</in>
+      </df>
+      <df name="ressources">
+      </df>
+      <df name="utils">
+        <in>cercle.cpp</in>
+        <in>cercle.h</in>
+        <in>ligne.cpp</in>
+        <in>ligne.h</in>
+        <in>point.cpp</in>
+        <in>point.h</in>
+        <in>segment.cpp</in>
+        <in>segment.h</in>
+        <in>utils.cpp</in>
+        <in>utils.h</in>
+        <in>vecteur.cpp</in>
+        <in>vecteur.h</in>
+      </df>
+    </df>
+    <logicalFolder name="ExternalFiles"
+                   displayName="Important Files"
+                   projectFiles="false"
+                   kind="IMPORTANT_FILES_FOLDER">
+      <itemPath>Makefile</itemPath>
+      <itemPath>simulateurintersections.pro</itemPath>
+    </logicalFolder>
+  </logicalFolder>
+  <sourceFolderFilter>^(nbproject)$</sourceFolderFilter>
+  <sourceRootList>
+    <Elem>.</Elem>
+  </sourceRootList>
+  <projectmakefile>Makefile</projectmakefile>
+  <confs>
+    <conf name="Default" type="0">
+      <toolsSet>
+        <remote-sources-mode>LOCAL_SOURCES</remote-sources-mode>
+        <compilerSet>default</compilerSet>
+      </toolsSet>
+      <makefileType>
+        <makeTool>
+          <buildCommandWorkingDir>.</buildCommandWorkingDir>
+          <buildCommand>${MAKE} -f Makefile</buildCommand>
+          <cleanCommand>${MAKE} -f Makefile clean</cleanCommand>
+          <executablePath></executablePath>
+        </makeTool>
+      </makefileType>
+    </conf>
+  </confs>
+</configurationDescriptor>

@@ -1,6 +1,6 @@
 #include "gestionnaireimages.h"
 #include "simulation.h"
-#include "signalisation.h"
+#include "trafficlights.h"
 
 /**
   * Constructeur, initialise l'identifiant de l'image actuelle à 0
@@ -29,21 +29,21 @@ void GestionnaireImages::ajouterImages()
   {
     Image* image(new Image());
     image->m_Tps = simu->m_TpsSimulation;
-    foreach(Vehicule* v, simu->m_Vehicules)
+    foreach(Car* v, simu->m_Vehicules)
     {
       Point moteur, frottement, objectif;
       v->forces(moteur, frottement);
-      if (v->conducteur())
-        objectif = v->conducteur()->m_ObjectifActuel;
+      if (v->driver())
+        objectif = v->driver()->m_ObjectifActuel;
       image->ajouterImageVehicule(new ImageVehicule(v->nom(),
                                                     v->type()->m_NomImage,
-                                     v->emplacement(),
+                                     v->position(),
                                      v->direction().angle(),
                                      v->acceleration(),
-                                     v->velocite(),
+                                     v->velocity(),
                                      moteur, frottement));
     }
-    foreach(Signalisation *s, simu->m_Signalisations)
+    foreach(TrafficLights *s, simu->m_Signalisations)
     {
       image->ajouterImageSignalisation(new ImageSignalisation(s->intersection()->nom(),
                                                               s->intersection(),

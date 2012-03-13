@@ -21,7 +21,7 @@ class ImageVehicule
 
     protected:
       QString m_Nom, m_NomImage;
-      Utils::Point m_Emplacement;
+      Utils::Point m_Position;
       qreal m_Direction;
       Point m_Acceleration, m_Velocite;
       Point m_ForceMoteur, m_ForceFrottements;

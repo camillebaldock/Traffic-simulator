@@ -1,10 +1,10 @@
 #include <QtGui/QApplication>
 #include <QResource>
-#include "simulateurtraffic.h"
+#include "trafficsimulator.h"
 
 int main(int argc, char *argv[]) {
     QApplication a(argc, argv);
-    SimulateurTraffic simulateur;
+    TrafficSimulator simulateur;
     simulateur.show();
     return a.exec();
 }

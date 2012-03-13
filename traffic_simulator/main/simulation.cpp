@@ -4,9 +4,9 @@
 #include <QDomElement>
 #include <QStringList>
 #include "simulation.h"
-#include "plan.h"
+#include "map.h"
 #include "utils.h"
-#include "signalisation.h"
+#include "trafficlights.h"
 
 using namespace Utils;
 
@@ -59,7 +59,7 @@ bool Simulation::supprimerInstance()
 void Simulation::ouvrirFichierXMLPlan(const QString &nomFichier)
 {
   effacerPlan();
-  m_Plan = new Plan(nomFichier);
+  m_Plan = new Map(nomFichier);
   m_FichierPlan = nomFichier;
 }
 
@@ -103,9 +103,9 @@ QString Simulation::ouvrirFichierXMLSignalisation(const QString &nomFichier)
   QDomNodeList elementsFeu = doc.elementsByTagName("Feu");
   for (int i=0; i<elementsFeu.size(); i++)
   {
-    Signalisation *s = new Signalisation();
+    TrafficLights *s = new TrafficLights();
     QDomElement elementFeu = elementsFeu.at(i).toElement();
-    const Plan::Intersection *inter = NULL;
+    const Map::Intersection *inter = NULL;
 
     QDomNodeList enfantsFeu = elementFeu.childNodes();
     for (int j=0; j<enfantsFeu.size(); j++)
@@ -119,7 +119,7 @@ QString Simulation::ouvrirFichierXMLSignalisation(const QString &nomFichier)
       else if (enfantFeu.tagName()=="Etat")
       {
         QDomElement elementEtat = enfantFeu.toElement();
-        Signalisation::Etat *etat = new Signalisation::Etat(elementEtat.attribute("nom"));
+        TrafficLights::State *etat = new TrafficLights::State(elementEtat.attribute("nom"));
 
         QDomNodeList enfantsEtat = elementEtat.childNodes();
         for (int k=0; k<enfantsEtat.size(); k++)
@@ -135,11 +135,11 @@ QString Simulation::ouvrirFichierXMLSignalisation(const QString &nomFichier)
           else if (enfantEtat.tagName()=="Connexion")
           {
             QStringList listeSeparee= enfantEtat.text().split(",", QString::SkipEmptyParts);
-            const Plan::Route *depart = m_Plan->getRoute(listeSeparee.at(0));
+            const Map::Road *depart = m_Plan->getRoute(listeSeparee.at(0));
             unsigned int voieDepart = listeSeparee.at(1).toInt();
-            const Plan::Route *fin = m_Plan->getRoute(listeSeparee.at(2));
+            const Map::Road *fin = m_Plan->getRoute(listeSeparee.at(2));
             unsigned int voieFin = listeSeparee.at(3).toInt();
-            Signalisation::Connexion *conn = new Signalisation::Connexion(depart, voieDepart, fin, voieFin);
+            TrafficLights::Connexion *conn = new TrafficLights::Connexion(depart, voieDepart, fin, voieFin);
             etat->ajouterConnexion(conn);
           }
         }
@@ -172,9 +172,9 @@ bool Simulation::finSimulation()
 
 void Simulation::avancer()
 {
-  foreach(Signalisation *s, m_Signalisations) s->avancer();
-  foreach(Conducteur *c, m_Conducteurs) c->avancer();
-  foreach(Vehicule *v, m_Vehicules) v->avancer();
+  foreach(TrafficLights *s, m_Signalisations) s->avancer();
+  foreach(Driver *c, m_Drivers) c->avancer();
+  foreach(Car *v, m_Vehicules) v->avancer();
   m_GestionnaireImages.ajouterImages();
   m_TpsSimulation = m_TpsSimulation.addMSecs(1000*m_PasSimulation);
 }
@@ -190,12 +190,12 @@ void Simulation::executer()
   }
 }
 
-void Simulation::ajouterVehicule(Vehicule *v)
+void Simulation::ajouterVehicule(Car *v)
 {
   m_Vehicules.push_back(v);
 }
 
-Vehicule* Simulation::ajouterVehicule(const QString &nom, const QString &nomType)
+Car* Simulation::ajouterVehicule(const QString &nom, const QString &nomType)
 {
   int nbVehicules = m_Vehicules.size();
   QString nomDepart = nom;
@@ -205,7 +205,7 @@ Vehicule* Simulation::ajouterVehicule(const QString &nom, const QString &nomType
     nomDepart = "Vehicule";
     nomFin = nomDepart+QString::number(nbVehicules);
   }
-  Vehicule *vehiculeExiste = trouverVehicule(nomFin);
+  Car *vehiculeExiste = trouverVehicule(nomFin);
   int n = nbVehicules+1;
   while (vehiculeExiste != NULL)
   {
@@ -227,18 +227,18 @@ Vehicule* Simulation::ajouterVehicule(const QString &nom, const QString &nomType
     return 0;
   }
 
-  TypeVehicule *tv = m_TypesVehicule.at(index);
-  Vehicule *v = new Vehicule(nomFin, tv);
-  v->setMasse(tv->m_Masse);
+  CarType *tv = m_TypesVehicule.at(index);
+  Car *v = new Car(nomFin, tv);
+  v->setWeight(tv->m_Masse);
   v->setEmpattement(tv->m_Empattement);
   v->setForceMoteur(tv->m_ForceMoteur);
   ajouterVehicule(v);
   return v;
 }
 
-Vehicule* Simulation::trouverVehicule(const QString &nom)
+Car* Simulation::trouverVehicule(const QString &nom)
 {
-  foreach(Vehicule *v, m_Vehicules)
+  foreach(Car *v, m_Vehicules)
   {
     if (v && v->nom() == nom)
       return v;
@@ -246,14 +246,14 @@ Vehicule* Simulation::trouverVehicule(const QString &nom)
   return NULL;
 }
 
-void Simulation::ajouterConducteur(Conducteur *c)
+void Simulation::ajouterConducteur(Driver *c)
 {
-  m_Conducteurs.push_back(c);
+  m_Drivers.push_back(c);
 }
 
-Conducteur* Simulation::ajouterConducteur(const QString &nom, const QString &nomType)
+Driver* Simulation::ajouterConducteur(const QString &nom, const QString &nomType)
 {
-  int nbConducteurs = m_Conducteurs.size();
+  int nbConducteurs = m_Drivers.size();
   QString nomDepart = nom;
   QString nomFinal = nomDepart;
   if (nom.isEmpty())
@@ -261,7 +261,7 @@ Conducteur* Simulation::ajouterConducteur(const QString &nom, const QString &nom
     nomDepart = "Conducteur";
     nomFinal = nomDepart+QString::number(nbConducteurs);
   }
-  Conducteur *conducteur = trouverConducteur(nomFinal);
+  Driver *conducteur = trouverConducteur(nomFinal);
   int n = nbConducteurs+1;
   while (conducteur != NULL)
   {
@@ -272,7 +272,7 @@ Conducteur* Simulation::ajouterConducteur(const QString &nom, const QString &nom
   int index = -1;
   for (int i=0; i<m_TypesConducteur.size(); i++)
   {
-    if (m_TypesConducteur.at(i)->m_Nom == nomType)
+    if (m_TypesConducteur.at(i)->m_Name == nomType)
     {
       index = i;
       break;
@@ -284,17 +284,17 @@ Conducteur* Simulation::ajouterConducteur(const QString &nom, const QString &nom
     return 0;
   }
 
-  TypeConducteur *tc = m_TypesConducteur.at(index);
-  Conducteur *c = new Conducteur(nomFinal);
+  DriverType *tc = m_TypesConducteur.at(index);
+  Driver *c = new Driver(nomFinal);
   c->m_ObjectifVitesseVirage = tc->m_VitesseVirage;
   c->m_VitesseParDefaut = tc->m_VitesseToutDroit;
   ajouterConducteur(c);
   return c;
 }
 
-Conducteur* Simulation::trouverConducteur(const QString &nom)
+Driver* Simulation::trouverConducteur(const QString &nom)
 {
-  foreach(Conducteur *c, m_Conducteurs)
+  foreach(Driver *c, m_Drivers)
   {
     if (c && c->nom() == nom)
       return c;
@@ -324,7 +324,7 @@ void Simulation::ouvrirFichierXMLTypes(const QString &nomFichier)
   for (int n1=0; n1<vTypes.size(); ++n1)
   {
     QDomElement elem1 = vTypes.at(n1).toElement();
-    TypeVehicule *vt = new TypeVehicule();
+    CarType *vt = new CarType();
     vt->m_Nom = elem1.attribute("nom");
 
     QDomNodeList children = elem1.childNodes();
@@ -347,8 +347,8 @@ void Simulation::ouvrirFichierXMLTypes(const QString &nomFichier)
   for (int n2=0; n2<cTypes.size(); ++n2)
   {
     QDomElement elem1 = cTypes.at(n2).toElement();
-    TypeConducteur *dt = new TypeConducteur();
-    dt->m_Nom = elem1.attribute("nom");
+    DriverType *dt = new DriverType();
+    dt->m_Name = elem1.attribute("nom");
 
     QDomNodeList children = elem1.childNodes();
     for (int i=0; i<children.size(); ++i)
@@ -388,7 +388,7 @@ void Simulation::ouvrirFichierXMLSimulation(const QString &nomFichier)
     QString nom_Vehicule = elementVehicule.attribute("nom");
     QString typeVehicule = elementVehicule.attribute("type");
 
-    Vehicule *nouveauVehicule = ajouterVehicule(nom_Vehicule, typeVehicule);
+    Car *nouveauVehicule = ajouterVehicule(nom_Vehicule, typeVehicule);
     if (!nouveauVehicule)
       return;
 
@@ -401,7 +401,7 @@ void Simulation::ouvrirFichierXMLSimulation(const QString &nomFichier)
         QString valStr = elem2.text();
         qreal x = valStr.section(" ", 0, 0).toFloat();
         qreal y = valStr.section(" ", 1, 1).toFloat();
-        nouveauVehicule->setEmplacement(Point(x,y));
+        nouveauVehicule->setPosition(Point(x,y));
       }
       else if (elem2.tagName() == "Direction")
       {
@@ -415,7 +415,7 @@ void Simulation::ouvrirFichierXMLSimulation(const QString &nomFichier)
       QDomElement elem2 = conducteurs.at(n4).toElement();
       QString typeConducteur = elem2.attribute("type");
 
-      Conducteur *nouveauConducteur = ajouterConducteur("Conducteur" + n4, typeConducteur);
+      Driver *nouveauConducteur = ajouterConducteur("Conducteur" + n4, typeConducteur);
       if (!nouveauConducteur)
         return;
       nouveauConducteur->utiliser(nouveauVehicule);

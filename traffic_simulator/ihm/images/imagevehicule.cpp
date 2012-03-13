@@ -13,7 +13,7 @@ ImageVehicule::ImageVehicule(const QString &nom,
                            const Point &forceFrottements)
   : m_Nom(nom),
     m_NomImage(nomImage),
-    m_Emplacement(emplacement),
+    m_Position(emplacement),
     m_Direction(direction),
     m_Acceleration(acceleration),
     m_Velocite(velocite),
@@ -34,7 +34,7 @@ QString ImageVehicule::nomImage() const
 
 Utils::Point ImageVehicule::emplacement() const
 {
-  return m_Emplacement;
+  return m_Position;
 }
 
 qreal ImageVehicule::direction() const

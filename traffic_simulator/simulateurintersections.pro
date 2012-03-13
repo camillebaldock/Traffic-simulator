@@ -15,49 +15,51 @@ INCLUDEPATH += utils \
                main
 
 SOURCES += main/main.cpp \
-           main/simulateurtraffic.cpp \
-           ihm/simulationihm.cpp \
            utils/point.cpp \
            utils/utils.cpp \
            utils/ligne.cpp \
            utils/segment.cpp \
-           main/plan.cpp \
            utils/vecteur.cpp \
            main/simulation.cpp \
-           ihm/routeihm.cpp \
            ihm/images/gestionnaireimages.cpp \
            ihm/images/image.cpp \
-           ihm/intersectionihm.cpp \
-           ihm/signalisationihm.cpp \
            ihm/images/imagesignalisation.cpp \
-           main/signalisation.cpp \
-           main/conducteur.cpp \
-           main/vehicule.cpp \
            ihm/images/imagevehicule.cpp \
-           ihm/vehiculeihm.cpp
+    ihm/road_ui.cpp \
+    ihm/car_ui.cpp \
+    ihm/intersection_ui.cpp \
+    main/driver.cpp \
+    main/map.cpp \
+    main/car.cpp \
+    ihm/simulation_ui.cpp \
+    ihm/trafficlights_ui.cpp \
+    main/trafficlights.cpp \
+    main/trafficsimulator.cpp
 
-HEADERS  += main/simulateurtraffic.h \
-            ihm/simulationihm.h \
+HEADERS  += \
             utils/point.h \
             utils/utils.h \
             utils/ligne.h \
             utils/segment.h \
-            main/plan.h \
             utils/vecteur.h \
             main/simulation.h \
-            ihm/routeihm.h \
             ihm/images/gestionnaireimages.h \
             ihm/images/image.h \
-            ihm/intersectionihm.h \
-            ihm/signalisationihm.h \
             ihm/images/imagesignalisation.h \
-            main/signalisation.h \
-            main/conducteur.h \
-            main/vehicule.h \
             ihm/images/imagevehicule.h \
-            ihm/vehiculeihm.h
+    ihm/intersection_ui.h \
+    ihm/road_ui.h \
+    ihm/car_ui.h \
+    main/driver.h \
+    main/car.h \
+    main/trafficsimulator.h \
+    main/trafficlights.h \
+    main/map.h \
+    ihm/trafficlights_ui.h \
+    ihm/simulation_ui.h
 
-FORMS    += simulateurtraffic.ui
+FORMS    += \
+    trafficsimulator.ui
 
 RESOURCES += ressources/Ressources.qrc
 

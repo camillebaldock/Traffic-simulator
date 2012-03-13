@@ -6,11 +6,11 @@
 #include <QMap>
 #include <QTime>
 #include "gestionnaireimages.h"
-#include "plan.h"
-#include "vehicule.h"
-#include "conducteur.h"
+#include "map.h"
+#include "car.h"
+#include "driver.h"
 class QGraphicsItem;
-class Signalisation;
+class TrafficLights;
 
 class Simulation : public QThread
 {
@@ -29,20 +29,20 @@ public:
   void setFinSimulation(bool fin);
   bool finSimulation();
   void avancer();
-  void ajouterVehicule(Vehicule *v);
-  Vehicule* ajouterVehicule(const QString &nom, const QString &nom_TypeVehicule);
-  Vehicule* trouverVehicule(const QString &nom);
-  void ajouterConducteur(Conducteur *c);
-  Conducteur* ajouterConducteur(const QString &nom, const QString &nom_TypeConducteur);
-  Conducteur* trouverConducteur(const QString &nom);
+  void ajouterVehicule(Car *v);
+  Car* ajouterVehicule(const QString &nom, const QString &nom_TypeVehicule);
+  Car* trouverVehicule(const QString &nom);
+  void ajouterConducteur(Driver *c);
+  Driver* ajouterConducteur(const QString &nom, const QString &nom_TypeConducteur);
+  Driver* trouverConducteur(const QString &nom);
   static qreal m_PasSimulation;
   static QTime m_TpsSimulation;
-  QList<TypeVehicule*> m_TypesVehicule;
-  QList<TypeConducteur*> m_TypesConducteur;
-  QList<Vehicule*> m_Vehicules;
-  QList<Conducteur*> m_Conducteurs;
-  QMap<const Plan::Intersection*, Signalisation*> m_Signalisations;
-  Plan *m_Plan;
+  QList<CarType*> m_TypesVehicule;
+  QList<DriverType*> m_TypesConducteur;
+  QList<Car*> m_Vehicules;
+  QList<Driver*> m_Drivers;
+  QMap<const Map::Intersection*, TrafficLights*> m_Signalisations;
+  Map *m_Plan;
   GestionnaireImages m_GestionnaireImages;
 
 private:
